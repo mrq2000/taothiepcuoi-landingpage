@@ -1,0 +1,22 @@
+{
+  "name": "taothiepcuoi-landingpage",
+  "version": "1.0.0",
+  "homepage": "https://taothiepcuoi.com/",
+  "description": "Landing page for https://taothiepcuoi.com",
+  "main": "scripts.js",
+  "scripts": {
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrq2000/taothiepcuoi-landingpage.git"
+  },
+  "author": "QuocPham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrq2000/taothiepcuoi-landingpage/issues"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
