@@ -21,6 +21,38 @@ window.znStorage = {
         return 0 === !this._storage.get(e).size && this._storage.delete(e), n
     }
 };
+(function(e, t) {
+    e.znAnimate = t(e)
+})(window, (function(e) {
+    var t, n = {},
+        i = function(e) {},
+        a = function(e) {
+            return null === e.offsetParent
+        },
+        o = function(e, t) {
+            if (a(e)) return !1;
+            var n = e.getBoundingClientRect();
+            return n.bottom >= t.t && n.top <= t.b
+        };
+    return n.init = function(a) {
+        a = a || {};
+        var o = a.offset || 0,
+            r = function(e, t) {
+                return parseInt(e || t, 10)
+            };
+        t = {
+            t: r(a.offsetTop, o),
+            b: r(a.offsetBottom, o)
+        }, i = a.callback || i, n.update(), document.addEventListener ? (e.addEventListener("scroll", n.update, !1), e.addEventListener("load", n.update, !1)) : (e.attachEvent("onscroll", n.update), e.attachEvent("onload", n.update))
+    }, n.update = function() {
+        for (var n, a = document.querySelectorAll('[data-scroll-animation]:not([data-scroll-animation=""]):not(.zn-animate)'), r = a.length, s = {
+                t: 0 - t.t,
+                b: (e.innerHeight || document.documentElement.clientHeight) + t.b
+            }, l = 0; l < r; l++) n = a[l], o(n, s) && (n.classList.add("zn-animate"), i(n))
+    }, n.detach = function() {
+        document.removeEventListener ? e.removeEventListener("scroll", n.update) : e.detachEvent("onscroll", n.update)
+    }, n
+}));
 Element.prototype.matches || (Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector), Element.prototype.closest || (Element.prototype.closest = function(e) {
     var t = this;
     do {
@@ -44,106 +76,21 @@ window.znRespondToVisibility = function(e, t) {
     i.observe(e)
 };
 znReady(function() {
+    window.znAnimate.init({
+        offset: 0
+    });
     (function() {
-        var e = "normal",
-            t = "true",
-            n = "false",
-            i = "1",
-            a = "1",
-            o = "500",
-            r = "false",
-            s = "3000",
-            l = document.getElementById("znid-453713557208"),
-            c = !1;
-        function p() {
-            new Splide("#znid-453713557208 > .zn-element > .zn-slider > .splide", {
-                type: "loop" == e ? "loop" : "slide",
-                rewind: "rewind" == e,
-                perPage: +i,
-                perMove: +a,
-                speed: +o,
-                height: "auto",
-                gap: "10px",
-                arrows: "true" == t,
-                pagination: "true" == n,
-                autoplay: "true" == r,
-                interval: +s,
-                arrowPath: "M 30.375 18.714844 L 12.195312 0.53125 C 11.484375 -0.175781 10.332031 -0.175781 9.625 0.53125 C 8.914062 1.242188 8.914062 2.394531 9.625 3.105469 L 26.519531 20 L 9.625 36.894531 C 8.914062 37.605469 8.914062 38.757812 9.625 39.46875 C 9.976562 39.824219 10.445312 40 10.910156 40 C 11.375 40 11.839844 39.824219 12.195312 39.46875 L 30.375 21.285156 C 30.71875 20.945312 30.910156 20.480469 30.910156 20 C 30.910156 19.515625 30.71875 19.054688 30.375 18.714844 Z M 30.375 18.714844"
-            }).mount()
-        }
-        window.znRespondToVisibility(l, (function(e) {
-            e && !c && (p(), c = !0)
-        }))
+        var e = document.getElementById("znid-885415079034"),
+            t = e.querySelector(":scope > .zn-element > .zn-banner"),
+            n = "",
+            i = null != document.querySelector(".zn-container.editing");
+        !i && n && (t.style.cursor = "pointer", t.addEventListener("click", (function() {
+            window.location.href = n
+        })))
     })();
     (function() {
         (function() {
-            var e = document.getElementById("znid-545571958851"),
-                t = e.querySelector(":scope > .zn-element > .zn-banner"),
-                n = "",
-                i = null != document.querySelector(".zn-container.editing");
-            !i && n && (t.style.cursor = "pointer", t.addEventListener("click", (function() {
-                window.location.href = n
-            })))
-        })();
-    })();
-    (function() {
-        (function() {
-            var e = document.getElementById("znid-975057918346"),
-                t = e.querySelector(":scope > .zn-element > .zn-banner"),
-                n = "",
-                i = null != document.querySelector(".zn-container.editing");
-            !i && n && (t.style.cursor = "pointer", t.addEventListener("click", (function() {
-                window.location.href = n
-            })))
-        })();
-    })();
-    (function() {
-        (function() {
-            var e = document.getElementById("znid-603323830395"),
-                t = e.querySelector(":scope > .zn-element > .zn-banner"),
-                n = "",
-                i = null != document.querySelector(".zn-container.editing");
-            !i && n && (t.style.cursor = "pointer", t.addEventListener("click", (function() {
-                window.location.href = n
-            })))
-        })();
-    })();
-    (function() {
-        (function() {
-            var e = document.getElementById("znid-204350556691"),
-                t = e.querySelector(":scope > .zn-element > .zn-banner"),
-                n = "",
-                i = null != document.querySelector(".zn-container.editing");
-            !i && n && (t.style.cursor = "pointer", t.addEventListener("click", (function() {
-                window.location.href = n
-            })))
-        })();
-    })();
-    (function() {
-        (function() {
-            var e = document.getElementById("znid-436164536335"),
-                t = e.querySelector(":scope > .zn-element > .zn-banner"),
-                n = "",
-                i = null != document.querySelector(".zn-container.editing");
-            !i && n && (t.style.cursor = "pointer", t.addEventListener("click", (function() {
-                window.location.href = n
-            })))
-        })();
-    })();
-    (function() {
-        (function() {
-            var e = document.getElementById("znid-209888569048"),
-                t = e.querySelector(":scope > .zn-element > .zn-banner"),
-                n = "",
-                i = null != document.querySelector(".zn-container.editing");
-            !i && n && (t.style.cursor = "pointer", t.addEventListener("click", (function() {
-                window.location.href = n
-            })))
-        })();
-    })();
-    (function() {
-        (function() {
-            var e = document.getElementById("znid-710305751123"),
+            var e = document.getElementById("znid-536555872743"),
                 t = null != document.querySelector(".zn-container.editing");
             function n(e, t, n) {
                 this.addEventListener("click", (function() {
@@ -156,7 +103,7 @@ znReady(function() {
                     a = "menubar=no,toolbar=no,status=no,width=640,height=640,top=" + i + ",left=" + n;
                 "_blank" == t ? window.open(e) : "_self" == t ? window.location = e : window.open(e, t, a)
             }
-            t || e.querySelectorAll(".zn-social-share-item").forEach((function(e) {
+            t || e.querySelectorAll(".zn-social-shareasdasd").forEach((function(e) {
                 var t, i = "Share",
                     a = "current",
                     o = "custom" == a,
@@ -189,7 +136,49 @@ znReady(function() {
     })();
     (function() {
         (function() {
-            var e = document.getElementById("znid-990367971341"),
+            for (var e = document.getElementById("znid-866147417729"), t = e.querySelectorAll(":scope > .zn-element > .zn-accordion > .zn-accordion-section > .zn-accordion-handle"), n = "multiple", i = 0; i < t.length; i++) t[i].addEventListener("click", (function() {
+                var e = this.nextElementSibling;
+                if (this.classList.contains("active")) this.classList.remove("active"), e.style.maxHeight = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0;
+                else if (this.classList.add("active"), e.style.maxHeight = null, e.style.paddingTop = null, e.style.paddingBottom = null, "single" == n)
+                    for (var i = 0; i < t.length; i++)
+                        if (t[i] != this) {
+                            e = t[i].nextElementSibling;
+                            t[i].classList.remove("active"), e.style.maxHeight = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0
+                        }
+            }))
+        })();
+    })();
+    (function() {
+        (function() {
+            for (var e = document.getElementById("znid-820087647098"), t = e.querySelectorAll(":scope > .zn-element > .zn-accordion > .zn-accordion-section > .zn-accordion-handle"), n = "multiple", i = 0; i < t.length; i++) t[i].addEventListener("click", (function() {
+                var e = this.nextElementSibling;
+                if (this.classList.contains("active")) this.classList.remove("active"), e.style.maxHeight = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0;
+                else if (this.classList.add("active"), e.style.maxHeight = null, e.style.paddingTop = null, e.style.paddingBottom = null, "single" == n)
+                    for (var i = 0; i < t.length; i++)
+                        if (t[i] != this) {
+                            e = t[i].nextElementSibling;
+                            t[i].classList.remove("active"), e.style.maxHeight = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0
+                        }
+            }))
+        })();
+    })();
+    (function() {
+        (function() {
+            for (var e = document.getElementById("znid-502207816660"), t = e.querySelectorAll(":scope > .zn-element > .zn-accordion > .zn-accordion-section > .zn-accordion-handle"), n = "multiple", i = 0; i < t.length; i++) t[i].addEventListener("click", (function() {
+                var e = this.nextElementSibling;
+                if (this.classList.contains("active")) this.classList.remove("active"), e.style.maxHeight = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0;
+                else if (this.classList.add("active"), e.style.maxHeight = null, e.style.paddingTop = null, e.style.paddingBottom = null, "single" == n)
+                    for (var i = 0; i < t.length; i++)
+                        if (t[i] != this) {
+                            e = t[i].nextElementSibling;
+                            t[i].classList.remove("active"), e.style.maxHeight = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0
+                        }
+            }))
+        })();
+    })();
+    (function() {
+        (function() {
+            var e = document.getElementById("znid-876874723831"),
                 t = null != document.querySelector(".zn-container.editing");
             function n(e, t, n) {
                 this.addEventListener("click", (function() {
@@ -202,7 +191,7 @@ znReady(function() {
                     a = "menubar=no,toolbar=no,status=no,width=640,height=640,top=" + i + ",left=" + n;
                 "_blank" == t ? window.open(e) : "_self" == t ? window.location = e : window.open(e, t, a)
             }
-            t || e.querySelectorAll(".zn-social-share-item").forEach((function(e) {
+            t || e.querySelectorAll(".zn-social-asdshare-itemdasd").forEach((function(e) {
                 var t, i = "Share",
                     a = "current",
                     o = "custom" == a,
