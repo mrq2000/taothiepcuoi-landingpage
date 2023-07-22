@@ -1,7 +1,7 @@
 {
   "name": "taothiepcuoi-landingpage",
   "version": "1.0.0",
-  "homepage": "https://taothiepcuoi.com/",
+  "homepage": "https://www.taothiepcuoi.com/",
   "description": "Landing page for https://taothiepcuoi.com",
   "main": "scripts.js",
   "scripts": {
