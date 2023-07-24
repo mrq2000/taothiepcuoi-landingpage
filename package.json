@@ -5,7 +5,7 @@
   "description": "Landing page for https://taothiepcuoi.com",
   "main": "scripts.js",
   "scripts": {
-    "deploy": "gh-pages -d app"
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
